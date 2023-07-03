@@ -1,0 +1,87 @@
+package com.example.EmployeesAPICRUD.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Employee")
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long empid;
+
+    @Column(name="emp_name")
+    private String emp_name;
+
+    @Column(name="emp_salary")
+    private Float emp_salary;
+    @Column(name="emp_age")
+    private int emp_age;
+
+    @Column(name="emp_city")
+    private String emp_city;
+
+    public Long empid() {
+        return empid;
+    }
+
+    public void setEmpid(Long empid) {
+        this.empid = empid;
+    }
+
+    public String emp_name() {
+        return emp_name;
+    }
+
+    public void setEmp_name(String emp_name) {
+        this.emp_name = emp_name;
+    }
+
+    public Float emp_salary() {
+        return emp_salary;
+    }
+
+    public void setEmp_salary(Float emp_salary) {
+        this.emp_salary = emp_salary;
+    }
+
+    public int emp_age() {
+        return emp_age;
+    }
+
+    public void setEmp_age(int emp_age) {
+        this.emp_age = emp_age;
+    }
+
+    public String emp_city() {
+        return emp_city;
+    }
+
+    public void setEmp_city(String emp_city) {
+        this.emp_city = emp_city;
+    }
+
+    public Employee(Long empid, String emp_name, Float emp_salary, int emp_age, String emp_city) {
+        this.empid = empid;
+        this.emp_name = emp_name;
+        this.emp_salary = emp_salary;
+        this.emp_age = emp_age;
+        this.emp_city = emp_city;
+    }
+    public Employee() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empid=" + empid +
+                ", emp_name='" + emp_name + '\'' +
+                ", emp_salary=" + emp_salary +
+                ", emp_age=" + emp_age +
+                ", emp_city='" + emp_city + '\'' +
+                '}';
+    }
+}
+
+
